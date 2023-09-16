@@ -1,6 +1,10 @@
+const buttonElement = document.querySelector("button");
 
-const LogAge = (age: number | string) => {
-    console.log(`Hej mam ${age} lat!`);
-};
-LogAge(28);
-LogAge('dwanaście')
+const calculatePrice = (orginalPrice: number, hasDiscount: boolean) => {
+    return hasDiscount ? orginalPrice * 0.8 : orginalPrice;
+}
+buttonElement.addEventListener("click", () => {
+    const originalPrice: number = 50;
+    const hasDiscount: boolean = new URLSearchParams(window.location.search).get("discount") === "true"
+    console.log(calculatePrice(originalPrice, hasDiscount))
+})
