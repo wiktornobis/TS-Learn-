@@ -6,9 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <button>Buy</button>
+    <form action="" class="container" autocomplete="off">
+        <label for="name">Task:</label>
+        <input type="text" id="name" />
+        <button>Add</button>
+        <p>Todo:</p>
+        <ul class="tasks"></ul>
+    </form>
     <script src="dist/app.js"></script>
 </body>
 </html>

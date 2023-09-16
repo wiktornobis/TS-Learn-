@@ -1,0 +1,13 @@
+
+.container {
+    max-width: 520px;
+    margin: 120px auto;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+input {padding: 8px 4px; margin-bottom: 23px;}
+button {transition: 0.3s all ease; padding: 8px 4px; margin-bottom: 23px; background: none; border: 1px solid black; border-radius: 3px; cursor: pointer;}
+button:hover {background: black; color: white;}
