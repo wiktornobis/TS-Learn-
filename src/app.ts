@@ -6,7 +6,10 @@ const tasksContainerElement: HTMLElement = document.querySelector(".tasks");
 interface Task {
     name: string;
     done: boolean;
+    category?: string;
 }
+
+const categories: string[] = ["general", "work", "gym", "hobby"];
 
 const tasks: Task[] = [
     {
@@ -16,10 +19,12 @@ const tasks: Task[] = [
     {
         name:  "Pójść na siłownie",
         done: true,
+        category: "gym",
     },
     {
         name: "Nakarmić psa",
         done: false,
+        category: "general",
     },
 ];
 
