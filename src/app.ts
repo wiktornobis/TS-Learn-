@@ -15,6 +15,7 @@ const tasks: Task[] = [
     {
         name: "Wyrzucenie śmieci",
         done: false,
+        category: "hobby",
         },
     {
         name:  "Pójść na siłownie",
@@ -24,7 +25,7 @@ const tasks: Task[] = [
     {
         name: "Nakarmić psa",
         done: false,
-        category: "general",
+        category: "work",
     },
 ];
 
@@ -32,6 +33,9 @@ const render = () => {
     tasksContainerElement.innerHTML = " ";
     tasks.forEach((task, index) => {
         const taskElement: HTMLElement = document.createElement("li");
+        if(task.category) {
+           taskElement.classList.add(task.category);
+        }
         const id: string = `task-${index}`;
 
         taskElement.innerText = task.name;
@@ -50,7 +54,6 @@ const render = () => {
             task.done = !task.done;
         })
 
-        taskElement.appendChild(labelElement);
         taskElement.appendChild(checkboxElement);
 
         tasksContainerElement.appendChild(taskElement);
