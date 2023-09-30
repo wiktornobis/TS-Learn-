@@ -10,7 +10,7 @@ const categoriesContainerElement: HTMLElement = document.querySelector(".categor
 
 let selectedCategory: Category;
 
-const categories: Category[] = ["general", "work", "gym", "hobby"];
+const categories: Category[] = ["general", "work", "gym", "hobby", "social"];
 
 const tasks: Task[] = [
     {
@@ -33,11 +33,18 @@ const tasks: Task[] = [
 const addTask = (task: Task) => {
     tasks.push(task);
 }
+const updateSelectedCategory = (newCategory: Category) => {
+    selectedCategory = newCategory;
+}
 addButtonElement.addEventListener("click", (e: Event) => {
     e.preventDefault();
     addTask({name: taskNameInputElement.value, done: false, category: selectedCategory});
     render(tasks, tasksContainerElement);
 })
-addTask({name: "zrobić klatę", done: false, category: selectedCategory})
-renderCategories(categories, categoriesContainerElement, selectedCategory);
+addTask({name: "zrobić klatę", category: "gym", done: false})
+renderCategories(
+    categories,
+    categoriesContainerElement,
+    updateSelectedCategory
+);
 render(tasks, tasksContainerElement);

@@ -26,8 +26,6 @@ export const render = (tasks: Task[], tasksContainerElement: HTMLElement) => {
         })
 
         taskElement.appendChild(checkboxElement);
-
         tasksContainerElement.appendChild(taskElement);
-
     })
 }
